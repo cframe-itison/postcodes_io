@@ -2,7 +2,7 @@ require 'excon'
 require 'json'
 require 'postcodes_io/outcode'
 
-module Outcodes
+module Postcodes
   module OutcodesLookup
 
 
