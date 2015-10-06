@@ -3,10 +3,10 @@ require 'json'
 require 'postcodes_io/postcode'
 
 module Postcodes
-  module Lookup
+  module PostcodesLookup
 
 
-    def lookup(*postcodes)
+    def lookup_postcodes(*postcodes)
       postcodes.flatten!
       if postcodes.count > 1
         lookup_multiple postcodes
@@ -18,7 +18,7 @@ module Postcodes
 
     private
 
-    def lookup_postcode(postcode)
+    def lookup_individual(postcode)
       postcode = remove_whitespace postcode
       response = Excon.get("https://api.postcodes.io/postcodes/#{postcode}")
 
