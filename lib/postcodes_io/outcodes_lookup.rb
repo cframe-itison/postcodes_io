@@ -20,7 +20,7 @@ module Postcodes
 
     def lookup_individual(outcode)
       outcode = remove_whitespace outcode
-      response = Excon.get("https://api.postcodes.io/postcodes/#{outcode}")
+      response = Excon.get("https://api.postcodes.io/outcodes/#{outcode}")
 
       unless response.status == 404
         parsed_response = JSON.parse(response.body)
